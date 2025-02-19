@@ -34,7 +34,6 @@ function App() {
       if(searchText !== '')
       {
 
-        setSelectedFilter('');
         let allHousesData = got.houses;
 
         let search = new RegExp(searchText, 'ig');
@@ -83,8 +82,8 @@ function App() {
 
   return (
     <div className='h-screen w-full'>
-        <Header searchText={searchText} setSearchText={setSearchText} />
-        <AllButtons selectedFilter={selectedFilter} setSelectedFilter={setSelectedFilter}/>
+        <Header searchText={searchText} setSearchText={setSearchText} setSelectedFilter={setSelectedFilter} />
+        <AllButtons selectedFilter={selectedFilter} setSelectedFilter={setSelectedFilter} setSearchText={setSearchText}/>
         <AllCards data={data}/>
     </div>
   )
